@@ -9,7 +9,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
-    this.state.searchResults = [  //NEED TO CHANGE THIS this.search()
+    this.state.searchResults = [  
        {
         name: 'name',
         artist: 'artist',
@@ -54,13 +54,12 @@ class App extends React.Component {
   savePlaylist() {
     const savePlaylistName = this.state.playlistName;
     const trackURIs = [];
-
   }
 
-  search(searchTerm) {
-    // const search = Spotify.search(searchTerm);
+  async search(searchTerm) {
+    // const search = await Spotify.search(searchTerm);
     // return this.setState({ searchResults: search });
-    Spotify.getAccessToken();
+    Spotify.savePlaylist();
   }
 
   render() {
